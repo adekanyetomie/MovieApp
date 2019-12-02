@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:movies_app/item.dart';
 import 'package:movies_app/detail.dart';
-import 'package:movies_app/image.dart';
 import 'package:http/http.dart' show Client;
 
 import 'movieimage.dart';
@@ -26,7 +25,7 @@ class ApiProvider{
     print(response.request.url);
     print(response.body.toString());
     if (response.statusCode == 200){
-      return Image.fromJson(json.decode(response.body));
+      return MovieImage.fromJson(json.decode(response.body));
     }else{
       throw Exception('something went wrong');
     }
