@@ -3,8 +3,9 @@ import 'dart:convert';
 import 'package:movies_app/item.dart';
 import 'package:movies_app/detail.dart';
 import 'package:movies_app/image.dart';
-import 'package:http/http.dart' as http;
 import 'package:http/http.dart' show Client;
+
+import 'movieimage.dart';
 
 class ApiProvider{
   Client client = Client();
@@ -20,7 +21,7 @@ class ApiProvider{
       throw Exception('something went wrong');
     }
   }
-  Future <Image> fetchMovieImages(int movieId) async {
+  Future <MovieImage> fetchMovieImages(int movieId) async {
     final response = await client.get('https://api.themoviedb.org/3/movie/$movieId/imaages?api_key=$apikey');
     print(response.request.url);
     print(response.body.toString());
