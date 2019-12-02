@@ -48,7 +48,7 @@ class _MovieListState extends State<MovieList> {
                   print('no handle');
                 }
               },
-              child: buildElement(snapshot.data.results[index].poster_path, snapshot.data.results[index].backdrop_path, width/3.5 ,index == 0,  ),
+              child: buildElement(snapshot.data.results[index].poster_path, snapshot.data.results[index].backdrop_path,index == 0, width/3.5,  ),
             );
           }
       ),
